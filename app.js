@@ -12,7 +12,9 @@
     $scope.name = 'sidebar'
     $scope.items = sideItems
     $scope.addItem = function(){
-      gridItems.push({letter:"I"})
+      if (gridItems.length < 16) {
+        gridItems.push({letter:"I"})
+      };
     }
   }])
 
