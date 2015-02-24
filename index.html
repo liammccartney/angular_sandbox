@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+  <!-- Angular Gridster CSS -->
+  <link rel="stylesheet" type="text/css" href="bower_components/angular-gridster/dist/angular-gridster.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <!-- Angular Snap Css -->
+  <link rel="stylesheet" href="bower_components/angular-snap/angular-snap.css">
+
+  <!-- Lib CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Vendor Scripts -->
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- jQuery Resize -->
+  <script src="bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+  <!-- Bootstrap.js -->
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- AngularJS CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+  <!-- Angular Gridster -->
+  <script src="bower_components/angular-gridster/dist/angular-gridster.min.js"></script>
+  <!-- SnapJS -->
+  <script src="bower_components/snapjs/snap.min.js"></script>
+  <!-- Angular SnapJS -->
+  <script src="bower_components/angular-snap/angular-snap.min.js"></script>
+  <!-- UI Bootsrap.js -->
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
+  <!-- Lib Scripts -->
+  <script src="items.js"></script>
+  <script src="app.js"></script>
+
+  <title>Gridster Testing</title>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">SuccesBoard</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-md-2" style="background-color:#333;" ng-controller="sideBarCtrl">
+        <div>
+          <ul>
+            <li ng-repeat="item in items">
+              {{item.name}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-10" ng-controller="dashCtrl">
+        <div gridster="gridsterOpts">
+          <ul>
+            <li gridster-item="item" ng-repeat="item in items">
+              {{item.letter}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
