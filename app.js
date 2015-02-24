@@ -11,6 +11,9 @@
   app.controller('sideBarCtrl', ['$scope', function($scope){
     $scope.name = 'sidebar'
     $scope.items = sideItems
+    $scope.addItem = function(){
+      gridItems.push({letter:"I"})
+    }
   }])
 
   app.controller('dashCtrl', ['$scope', function($scope){
