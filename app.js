@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('app', ['gridster', 'snap'])
+  var app = angular.module('app', ['gridster', 'snap', 'ngDragDrop'])
 
   app.config(function(snapRemoteProvider) {
     snapRemoteProvider.globalOptions = {
