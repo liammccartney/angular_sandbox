@@ -33,11 +33,7 @@
       minSizeY: 1, // minumum row height of an item
       maxSizeY: null, // maximum row height of an item
       resizable: {
-         enabled: false,
-         handles: ['n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw'],
-         start: function(event, $element, widget) {}, // optional callback fired when resize is started,
-         resize: function(event, $element, widget) {}, // optional callback fired when item is resized,
-         stop: function(event, $element, widget) {} // optional callback fired when item is finished resizing
+         enabled: false
       },
       draggable: {
          enabled: true, // whether dragging items is supported
