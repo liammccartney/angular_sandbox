@@ -1,9 +1,16 @@
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: #004756;
+    background-color: #F7910B;
     color: #fff;
 }
 
+.gridster{
+  background: #165788;
+}
+
+.snap-content, .snap-drawers{
+  background-color: #F7910B;
+}
 .gridster .gridster-item {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -25,15 +32,13 @@ html, body, #content {
 }
 
 #content {
-  background-color: cyan;
-
   -moz-box-shadow: 0 0 20px #888;
   -webkit-box-shadow: 0 0 20px #888;
   box-shadow: 0 0 20px #888;
 }
 
-#shelf-1 {
-  /*width: 235px;*/
+#views-drawer{
+  background-color: #165788;
   padding: 0 10px;
 }
 
