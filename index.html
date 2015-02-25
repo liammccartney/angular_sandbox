@@ -46,6 +46,7 @@
   <script src="items.js"></script>
   <script src="app.js"></script>
 
+
   <title>Gridster Testing</title>
 </head>
 <body ng-app='app'>
@@ -94,7 +95,7 @@
         <div class="row" ng-controller="dashCtrl">
           <div class="col-md-12" gridster="gridsterOpts">
             <ul>
-              <li ng-repeat="item in items" gridster-item>
+              <li ng-repeat="item in items" gridster-item class="view-box">
               </li>
             </ul>
           </div>
@@ -103,6 +104,8 @@
       </div>
     </div>
   </div>
+
+
 
 </body>
 </html>
