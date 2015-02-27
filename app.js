@@ -11,6 +11,7 @@
   app.controller('sideBarCtrl', ['$scope', function($scope){
     $scope.name = 'sidebar'
     $scope.items = sideItems
+
     $scope.addItem = function(){
       if (gridItems.length < 16) {
         gridItems.push({letter:"I"})
@@ -37,9 +38,20 @@
          enabled: false
       },
       draggable: {
-         enabled: true
+         enabled: false
       }
     };
+
+    $scope.rearrangeGrid = function(){
+      console.log('hey')
+      if (this.gridsterOpts.draggable.enabled == true) {
+        this.gridsterOpts.draggable.enabled = false
+      }
+      else{
+        this.gridsterOpts.draggable.enabled = true
+      }
+
+    }
   }])
 
 })();
