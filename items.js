@@ -10,7 +10,7 @@ var gridItems = [
     ];
 
 var sideItems = [
-  {name: "pie"},
-  {name: "line"},
-  {name: "bar"}
+  {name: "Visual 1"},
+  {name: "Visual 2"},
+  {name: "Visual 3"}
 ];
