@@ -22,7 +22,8 @@
     $scope.items = gridItems
 
     $scope.gridsterOpts = {
-      columns: 4, // the width of the grid, in columns
+      columns: 4,
+      pushing: false,
       minColumns: 1, // the minimum columns the grid must have
       minRows: 2, // the minimum height of the grid, in rows
       maxRows: 4,
@@ -36,11 +37,7 @@
          enabled: false
       },
       draggable: {
-         enabled: true, // whether dragging items is supported
-         handle: '.my-class', // optional selector for resize handle
-         start: function(event, $element, widget) {}, // optional callback fired when drag is started,
-         drag: function(event, $element, widget) {}, // optional callback fired when item is moved,
-         stop: function(event, $element, widget) {} // optional callback fired when item is finished dragging
+         enabled: true
       }
     };
   }])
