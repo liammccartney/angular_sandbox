@@ -1,7 +1,7 @@
 var gridItems = [
       { letter:"a",
-        id:"bd3e59e6-f6da-4738-a6de-2ea1e54421c6",
-        js_src:"js/scatter.js"
+        id:"1c4505be-4676-4d66-b3dc-166522105e51",
+        js_src:"js/line.js"
       },
       { letter:"b", id:"", js_src:"",  },
       { letter:"c", id:"", js_src:"" },
