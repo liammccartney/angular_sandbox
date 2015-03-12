@@ -46,13 +46,15 @@
     };
 
     $scope.rearrangeGrid = function(){
-      console.log('hey')
       if (this.gridsterOpts.draggable.enabled == true) {
         this.gridsterOpts.draggable.enabled = false
+        this.gridsterOpts.pushing = false
       }
       else{
         this.gridsterOpts.draggable.enabled = true
+        this.gridsterOpts.pushing = true
       }
+    }
 
     }
   }])
