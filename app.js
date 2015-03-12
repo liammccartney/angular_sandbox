@@ -64,6 +64,11 @@
         }
       }
     }
+
+    $scope.$on('gridster-resized', function(event, newSizes){
+      console.log('resized!')
+      $scope.sizeElements()
+    });
   }])
 
 })();
