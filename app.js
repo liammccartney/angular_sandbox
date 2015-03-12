@@ -16,7 +16,12 @@
 
     $scope.addItem = function(){
       if (gridItems.length < 16) {
-        gridItems.push({letter:"I"})
+        gridItems.push({
+          id:"123456789",
+          js_src:"js/line_2.js",
+          sizeX: 4,
+          sizeY: 4
+      })
       };
     }
   }])
