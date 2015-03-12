@@ -56,6 +56,13 @@
       }
     }
 
+    $scope.sizeElements = function(){
+      for (key in Bokeh.index){
+        for (plotId in Bokeh.index[key].views){
+          $parent = $("#"+Bokeh.index[key].el.id)
+          Bokeh.index[key].views[plotId].canvas._set_dims([$parent.width()-25, $parent.height()-25])
+        }
+      }
     }
   }])
 
