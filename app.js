@@ -73,7 +73,6 @@
     $scope.$watch(function(){return Bokeh.Collections("Plot").models.length}, function(){$scope.sizeElements()})
 
     $scope.$on('gridster-resized', function(event, newSizes){
-      console.log('resized!')
       $scope.sizeElements()
     });
   }])
