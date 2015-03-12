@@ -12,13 +12,7 @@ var gridItems = [
        js_src:"js/scatter.js",
         sizeX: 4,
         sizeY: 4
-     },
-      { letter:"c", id:"", js_src:"" },
-      { letter:"d", id:"", js_src:"" },
-      { letter:"e", id:"", js_src:"" },
-      { letter:"f", id:"", js_src:"" },
-      { letter:"g", id:"", js_src:"" },
-      { letter:"h", id:"", js_src:"" }
+     }
     ];
 
 var sideItems = [
