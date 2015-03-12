@@ -1,4 +1,5 @@
 (function() {
+
   var app = angular.module('app', ['gridster', 'snap', 'ngDragDrop'])
 
   app.config(function(snapRemoteProvider) {
@@ -6,6 +7,7 @@
       disable: 'right',
       touchToDrag: false
     }
+
   });
 
   app.controller('sideBarCtrl', ['$scope', function($scope){
@@ -20,14 +22,15 @@
   }])
 
   app.controller('dashCtrl', ['$scope', function($scope){
+
     $scope.items = gridItems
 
     $scope.gridsterOpts = {
-      columns: 4,
+      columns: 8,
+      margins: [10, 10],
       pushing: false,
       minColumns: 1, // the minimum columns the grid must have
       minRows: 2, // the minimum height of the grid, in rows
-      maxRows: 4,
       defaultSizeX: 1, // the default width of a gridster item, if not specifed
       defaultSizeY: 1, // the default height of a gridster item, if not specified
       minSizeX: 1, // minimum column width of an item
