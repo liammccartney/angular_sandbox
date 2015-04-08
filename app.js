@@ -14,14 +14,9 @@
     $scope.name = 'sidebar'
     $scope.items = sideItems
 
-    $scope.addItem = function(){
+    $scope.addItem = function(index){
       if (gridItems.length < 16) {
-        gridItems.push({
-          id:"123456789",
-          js_src:"js/line_2.js",
-          sizeX: 4,
-          sizeY: 4
-      })
+        gridItems.push(sideItems[index])
       };
     }
   }])
