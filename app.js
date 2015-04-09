@@ -57,12 +57,16 @@
     }
 
     $scope.sizeElements = function(){
-      for (key in Bokeh.index){
-        for (plotId in Bokeh.index[key].views){
-          $parent = $("#"+Bokeh.index[key].el.id)
-          Bokeh.index[key].views[plotId].canvas._set_dims([$parent.width()-25, $parent.height()-25])
-        }
-      }
+      var plots = Bokeh.Collections("Plot")
+      var plotContexts = Bokeh.Collections("PlotContext")
+      plotContexts.each(function(plotContext){
+        var plotContextView = Bokeh.index[plotContext.id]
+        var plotsToSize = plots.filter(function(e){return e.attributes.doc === plotContext.attributes.doc})
+        plotsToSize.forEach(function(p){
+          p.set("plot_width", $(plotContextView.el).width() - 25 )
+          p.set("plot_height", $(plotContextView.el).height() -25 )
+        })
+      })
     }
 
     $scope.$watch(function(){return Bokeh.Collections("Plot").models.length}, function(){$scope.sizeElements()})
