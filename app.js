@@ -67,6 +67,16 @@
           p.set("plot_height", $(plotContextView.el).height() -25 )
         })
       })
+
+      var dataTableElements = $(".bk-data-table")
+      dataTableElements.each(function(index, tableElement){
+        var modelId = findModelID($(tableElement).closest(".plotdiv")[0].id)
+        var dataTableView = findViewObject(tableElement, Bokeh.index[modelId])
+        dataTableView.model.attributes.width = dataTableView.$el.closest('.plotdiv').width() - 25
+        dataTableView.model.attributes.height = dataTableView.$el.closest('.plotdiv').height() - 40
+        dataTableView.render()
+        console.log('data table resized!')
+      })
     }
 
     $scope.$watch(function(){return Bokeh.Collections("Plot").models.length}, function(){$scope.sizeElements()})
