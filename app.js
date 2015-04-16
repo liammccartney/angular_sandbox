@@ -85,4 +85,27 @@ app.controller('dashCtrl', ['$scope', '$rootScope', function($scope, $rootScope)
     $scope.sizeElements()
   });
 
+  $scope.$on("gridItemsPassing", function(){
+    if ($scope.items.filter(function(v){return v === gridItemsService.itemToPass}).length === 0) {
+      $scope.items.push(gridItemsService.itemToPass)
+    };
+  })
+
+}])
+
+app.factory('gridItemsService', ['$rootScope', function($rootScope){
+  var gridItemsService = {};
+  gridItemsService.itemToPass = {}
+  gridItemsService.prepForBroadcast = function(item){
+    this.itemToPass = item
+    this.broadcastItems();
+  }
+  gridItemsService.broadcastItems = function(){
+    $rootScope.$broadcast('gridItemsPassing')
+  }
+  return gridItemsService;
+}])
+
+app.factory('getAvailableViews', ['$http', function($http){
+  $http.('')
 }])
