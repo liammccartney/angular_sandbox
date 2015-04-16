@@ -9,18 +9,16 @@ app.config(function(snapRemoteProvider) {
 
 });
 
-app.controller('sideBarCtrl', ['$scope', '$rootScope', function($scope, $rootScope){
+app.controller('sideBarCtrl', ['$scope', '$rootScope', 'gridItemsService', function($scope, $rootScope, gridItemsService){
   $scope.name = 'sidebar'
   $scope.items = sideItems
 
   $scope.addItem = function(index){
-    if (gridItems.filter(function(v, i){return v === sideItems[index]}).length === 0) {
-      gridItems.push(sideItems[index])
-    };
+    gridItemsService.prepForBroadcast(sideItems[index])
   }
 }])
 
-app.controller('dashCtrl', ['$scope', '$rootScope', function($scope, $rootScope){
+app.controller('dashCtrl', ['$scope', '$rootScope', 'gridItemsService', function($scope, $rootScope, gridItemsService){
 
   $scope.items = gridItems
   $scope.bokehPlotCount = Bokeh.Collections("Plot").length
