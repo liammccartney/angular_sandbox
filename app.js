@@ -9,18 +9,20 @@ app.config(function(snapRemoteProvider) {
 
 });
 
-app.controller('sideBarCtrl', ['$scope', '$rootScope', 'gridItemsService', function($scope, $rootScope, gridItemsService){
+app.controller('sideBarCtrl', ['$scope', '$rootScope', 'gridItemsService', 'getAvailableViews', function($scope, $rootScope, gridItemsService, getAvailableViews){
   $scope.name = 'sidebar'
-  $scope.items = sideItems
-
+  getAvailableViews.success(function(data){
+    $scope.items = data
+  })
+  console.log($scope.items)
   $scope.addItem = function(index){
-    gridItemsService.prepForBroadcast(sideItems[index])
+    gridItemsService.prepForBroadcast(items[index])
   }
 }])
 
-app.controller('dashCtrl', ['$scope', '$rootScope', 'gridItemsService', function($scope, $rootScope, gridItemsService){
+app.controller('dashCtrl', ['$scope', '$rootScope', 'gridItemsService', 'getAvailableViews', function($scope, $rootScope, gridItemsService, getAvailableViews){
 
-  $scope.items = gridItems
+  $scope.items = [];
   $scope.bokehPlotCount = Bokeh.Collections("Plot").length
   $scope.gridsterOpts = {
     columns: 16,
@@ -105,5 +107,10 @@ app.factory('gridItemsService', ['$rootScope', function($rootScope){
 }])
 
 app.factory('getAvailableViews', ['$http', function($http){
-  $http.('')
+  return $http.get('/items.json')
+  .success(function(data){
+    return data
+  }).error(function(err){
+    return err
+  })
 }])
