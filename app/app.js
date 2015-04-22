@@ -1,4 +1,5 @@
 Bokeh.set_log_level('warn')
+
 var app = angular.module('app', ['gridster', 'snap', 'ngDragDrop'])
 
 app.config(function(snapRemoteProvider) {
