@@ -3,7 +3,8 @@
        "id":"1c4505be-4676-4d66-b3dc-166522105e51",
        "js_src":"js/line.js",
        "sizeX": 8,
-       "sizeY": 8
+       "sizeY": 8,
+       "row":9
      },
      {
        "name":"Scatter Plot",

@@ -13,7 +13,6 @@
 
   <!-- Lib CSS -->
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" type="text/css" href="https://rawgit.com/successacademycharterschools/bokeh-extensions/master/filter_styles.css">
   <style type="text/css">
     .bk-hbox{display: none;}
   </style>
@@ -96,7 +95,7 @@
           <div class="col-md-12" gridster="gridsterOpts">
             <ul>
               <div class="plotdiv" id="{{item.id}}" ng-repeat="item in items track by $index" gridster-item="item">
-                <script type="text/javascript" ng-src="{{item.js_src}}"></script>
+                <!-- <script type="text/javascript" ng-src="{{item.js_src}}"></script> -->
               </div>
             </ul>
           </div>
